@@ -1,255 +1,251 @@
-.why-section {
-  width: 100%;
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #fff;
-}
-
-h1 {
-  font-family: "Kadwa", serif;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.wcontent {
-  max-width: 800px;
-  margin: 0 auto 3rem auto;
-  text-align: center;
-}
-
-.content {
-  font-family: "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  padding: 2rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  background-color: #f0f5e9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out 0.3s forwards;
-  color: #555;
-}
-
-.content:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
 .members-section {
   width: 100%;
   padding: 6rem 2rem;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   overflow: hidden;
+  position: relative;
+  min-height: 500px;
+  text-align: center;
+}
+
+.members-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   color: #333;
   margin-bottom: 4rem;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .cards-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
 }
 
 .member-card {
+  width: 320px;
+  height: 400px;
+  perspective: 1000px;
   position: relative;
-  width: 350px;
-  height: 450px;
-  border-radius: 20px;
-  overflow: hidden;
+  transition: transform 0.6s;
   cursor: pointer;
-  background: #000;
 }
 
-.card-image-container {
-  position: relative;
+.member-card .card-inner {
   width: 100%;
   height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.member-card.hovered .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-front {
+  color: #fff;
+}
+
+.card-back {
+  background-color: #4caf50;
+  color: #fff;
+  transform: rotateY(180deg);
+  justify-content: center;
 }
 
 .card-image {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: cover;
-  opacity: 0.7;
-  transition: transform 0.5s ease;
-}
-
-.member-card:hover .card-image {
-  transform: scale(1.1);
-}
-
-.default-content {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.member-card:hover .default-content {
-  opacity: 0;
-}
-.members-section {
-  width: 100%;
-  padding: 6rem 2rem;
-  background-color: #ffffff;
-  overflow: hidden;
-  position: relative; /* Add this */
-  min-height: 500px; /* And this (adjust the value) */
-}
-
-.members-section::before {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensure it's behind the content */
-}
-
-.section-title {
-  position: relative; /* Ensure content is above background */
-  z-index: 1;
-}
-
-.cards-container {
-  position: relative; /* Ensure content is above background */
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-.member-name {
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-  font-family: "Poppins", sans-serif;
-}
-
-.member-role {
-  color: white;
-  font-size: 1.1rem;
-  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
 }
 
-.overlay-content {
-  text-align: center;
+.member-name {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+}
+
+.member-role {
+  font-size: 1.5rem;
+  color: #eee;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .quote-icon {
-  color: #4caf50;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .member-quote {
-  color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 2rem;
-  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 .social-links {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .social-icon {
-  color: white;
-  font-size: 1.5rem;
-  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  opacity: 0.8;
 }
 
 .social-icon:hover {
-  opacity: 1;
-  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 
-@media (max-width: 1100px) {
-  .cards-container {
-    flex-wrap: wrap;
+@media (max-width: 575.98px) {
+  .members-section {
+    padding: 4rem 1rem;
   }
 
-  .member-card {
-    width: 320px;
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
   .section-title {
     font-size: 2.2rem;
     margin-bottom: 3rem;
   }
 
+  .cards-container {
+    padding: 0.5rem;
+  }
+
   .member-card {
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+    margin: 0 auto;
+  }
+
+  .card-image {
+    height: 60%;
+  }
+
+  .card-overlay {
+    padding: 0.75rem;
+    padding-bottom: 3rem;
+  }
+
+  .member-name {
+    font-size: 2rem;
+  }
+
+  .member-role {
+    font-size: 1.2rem;
+  }
+
+  .member-quote {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .members-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .cards-container {
+    padding: 0.75rem;
+  }
+
+  .member-card {
+    width: 45%;
+    max-width: 350px;
+    height: 380px;
+  }
+
+  .card-image {
+    height: 65%;
+  }
+
+  .card-overlay {
+    padding: 0.85rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .member-name {
+    font-size: 2.4rem;
+  }
+
+  .member-role {
+    font-size: 1.3rem;
   }
 
   .member-quote {
@@ -257,7 +253,66 @@ h1 {
   }
 }
 
-/* Add smooth transition for all animations */
-* {
-  transition: all 0.3s ease;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .section-title {
+    font-size: 2.7rem;
+    margin-bottom: 3.7rem;
+  }
+
+  .cards-container {
+    padding: 0.9rem;
+  }
+
+  .member-card {
+    width: 30%;
+    max-width: 320px;
+    height: 400px;
+  }
+
+  .card-image {
+    height: 70%;
+  }
+
+  .card-overlay {
+    padding: 0.95rem;
+    padding-bottom: 3.7rem;
+  }
+
+  .member-name {
+    font-size: 2.6rem;
+  }
+
+  .member-role {
+    font-size: 1.4rem;
+  }
+
+  .member-quote {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cards-container {
+    gap: 1.5rem;
+  }
+
+  .member-card {
+    width: 28%;
+    max-width: 300px;
+    height: 400px;
+  }
+
+  .member-name {
+    font-size: 2.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-container {
+    gap: 2rem;
+  }
+
+  .member-card {
+    width: 320px;
+  }
 }

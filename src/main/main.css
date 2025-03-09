@@ -100,6 +100,7 @@
   color: white;
   font-weight: 500;
   font-size: 1.1rem;
+  position: left;
 }
 .ant-float-button-icon {
   color: white !important;
@@ -136,25 +137,6 @@
   color: white !important;
 }
 
-@media (max-width: 768px) {
-  .sticky-contact-btn {
-    bottom: 100px;
-    right: 20px;
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-
-  .ant-float-button {
-    width: 60px !important;
-    height: 60px !important;
-  }
-
-  .ant-float-button-description {
-    font-size: 0.9rem !important;
-  }
-}
-
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -206,7 +188,6 @@
   transform: rotate(90deg);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -224,5 +205,190 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+.drawer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.drawer-iframe {
+  width: 100%;
+  border: none;
+}
+
+@media (max-width: 575.98px) {
+  .drawer-iframe {
+    height: 2000px; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .drawer-iframe {
+    height: 2200px; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .drawer-iframe {
+    height: 2400px; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .drawer-iframe {
+    height: 2600px; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 1200px) {
+  .drawer-iframe {
+    height: 2779px; /* Default height */
+  }
+}
+@media (max-width: 575.98px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 80px;
+    height: 48px;
+  }
+
+  .footer {
+    font-size: medium;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .sticky-contact-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px;
+    font-size: 0.9rem;
+    width: 45px;
+    height: 45px;
+  }
+
+  .ant-float-btn-default {
+    width: 60px !important;
+    height: 60px !important;
+    bottom: 80px !important;
+    right: 16px !important;
+  }
+
+  .ant-float-btn-default
+    .ant-float-btn-body
+    .ant-float-btn-content
+    .ant-float-btn-description {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+  }
+
+  .ant-float-button-icon {
+    font-size: 16px !important;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .ant-float-button {
+    right: 16px !important;
+    bottom: 16px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    width: 90px;
+    height: 54px;
+  }
+
+  .footer {
+    font-size: large;
+    padding: 0.75rem;
+  }
+
+  .sticky-contact-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    width: 55px;
+    height: 55px;
+  }
+
+  .ant-float-btn-default {
+    width: 70px !important;
+    height: 70px !important;
+    bottom: 90px !important;
+    right: 20px !important;
+  }
+
+  .ant-float-btn-default
+    .ant-float-btn-body
+    .ant-float-btn-content
+    .ant-float-btn-description {
+    font-size: 0.9rem;
+    padding: 3px 10px;
+  }
+
+  .ant-float-button-icon {
+    font-size: 18px !important;
+  }
+
+  .modal-content {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    font-size: 26px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .sticky-contact-btn {
+    bottom: 24px;
+    right: 44px;
+  }
+
+  .ant-float-btn-default {
+    right: 24px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .sticky-contact-btn {
+    right: 64px;
+  }
+
+  .ant-float-btn-default {
+    right: 29px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ant-float-btn-default {
+    right: 34px !important;
   }
 }

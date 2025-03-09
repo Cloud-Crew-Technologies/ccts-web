@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import "./service.css";
 import TeamImage from "../assets/ourservices.png";
 import {
@@ -11,19 +11,7 @@ import {
 } from "react-icons/fa";
 
 function Service() {
-  const sectionRef = useRef(null); // Ref for the whole section
-
-  useEffect(() => {
-    // Set background image on the section ref for the parallax
-    if (sectionRef.current) {
-      sectionRef.current.style.backgroundImage = `url(${TeamImage})`;
-      sectionRef.current.style.backgroundAttachment = "fixed";
-      sectionRef.current.style.backgroundSize = "cover";
-      sectionRef.current.style.backgroundPosition = "center";
-      sectionRef.current.style.backgroundColor = "#f0f5e9"; // Fallback color
-    }
-  }, []); // Run this effect only once after initial render
-
+  console.log(TeamImage)
   const services = [
     {
       title: "Website Development",
@@ -58,7 +46,7 @@ function Service() {
   ];
 
   return (
-    <div className="services-section" ref={sectionRef}>
+    <div className="services-section">
       <h1 className="services-title">Our Services</h1>
 
       <div className="services-grid">
@@ -74,6 +62,10 @@ function Service() {
               {service.title}
             </div>
           ))}
+        </div>
+
+        <div className="services-image">
+          <img src={TeamImage} alt="Team collaboration illustration" />
         </div>
       </div>
     </div>
