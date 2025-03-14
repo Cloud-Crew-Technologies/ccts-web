@@ -5,6 +5,7 @@ import Choose from "../choose/whychoose";
 import Service from "../services/service";
 import Client from "../clientsays/clientsays";
 import Members from "../core members/members";
+import App from "../About/About"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Drawer, FloatButton } from "antd";
 import { LikeOutlined } from "@ant-design/icons";

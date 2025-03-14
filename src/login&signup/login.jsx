@@ -6,6 +6,7 @@ import Backvid from "../assets/2.mp4";
 import vid from "../assets/cloud1.mp4";
 import sign from "../assets/signin.jpg";
 import PasswordReveal from "./password";
+import axios from "axios";
 import "./login.css";
 
 function Login() {
@@ -35,10 +36,23 @@ function Login() {
   };
 
   const handleSubmit = (e) => {
+    try{
+    
     e.preventDefault();
     if (validateForm()) {
       console.log("Form is valid", formData);
-      navigate("/home");
+      axios.post("https://uijk846a.up.railway.app/api/login", formData).then(
+        (response) => {
+          console.log(response.data);
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", response.data.user);
+          navigate("/home");
+          },
+      )
+    }
+  }
+  catch(error){
+    console.log(error);
     }
   };
 
